@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
+    "@prisma/client": "^5.22.0",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^10.0.0-alpha.2",
     "@studio-freight/lenis": "^1.0.42",
@@ -42,11 +44,9 @@
     "tailwind-merge": "^3.5.0",
     "three": "^0.183.2",
     "three-globe": "^2.45.0",
-    "zod": "^4.3.6",
-    "@prisma/client": "^5.22.0"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
-
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
