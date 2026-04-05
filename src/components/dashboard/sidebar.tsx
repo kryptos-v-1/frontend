@@ -39,10 +39,10 @@ export default function Sidebar() {
   const { user, isAuthenticated } = useSession();
 
   const getPageId = (path: string) => {
-    if (path === "/") return "dashboard";
+    if (path === "/") return "wallet-scanner";
     if (path.startsWith("/portfolio")) return "portfolio";
-    if (path.startsWith("/dashboard")) return "dashboard";
-    return path.slice(1) || "dashboard";
+    if (path.startsWith("/wallet-scanner")) return "wallet-scanner";
+    return path.slice(1) || "wallet-scanner";
   };
 
   const activeItem = getPageId(pathname);
@@ -97,11 +97,9 @@ export default function Sidebar() {
                 <li key={item.id}>
                   <Link
                     href={
-                      item.id === "dashboard"
-                        ? "/dashboard"
-                        : item.id === "portfolio"
-                          ? "/portfolio"
-                          : `/${item.id}`
+                      item.id === "portfolio"
+                        ? "/portfolio"
+                        : `/${item.id}`
                     }
                     className={cn(
                       "group flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
