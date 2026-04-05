@@ -1,0 +1,26 @@
+import type { Metadata } from "next"
+import Sidebar from "@/components/dashboard/sidebar"
+import Header from "@/components/dashboard/header"
+
+export const metadata: Metadata = {
+  title: "KRYPTOS — Profile",
+  description: "Manage your account and subscription",
+}
+
+export default function ProfileLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <>
+      <Sidebar />
+      <div className="pl-64">
+        <Header />
+        <main className="pt-16">
+          {children}
+        </main>
+      </div>
+    </>
+  )
+}
